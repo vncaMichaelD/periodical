@@ -1,0 +1,5 @@
+DigitalObject.include(Audiovisuals)
+DigitalObject.include(Oralhistorys)
+DigitalObject.include(Prdcls)
+DigitalObject.include(Maps)
+DigitalObject.include(SeeAlsos)

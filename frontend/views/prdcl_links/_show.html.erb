@@ -1,0 +1,24 @@
+<section>
+  <div class="container-subrecord">
+    <% prdcl_links.each_with_index do |prdcl_link, index| %>
+      <% 
+        prdcl_link["jsonmodel_type"] = "prdcl_link"
+      %>
+      <%= read_only_view(prdcl_link, :label_css => "col-md-4") %>
+      <% if prdcl_link['_resolved'] %>
+        <div class="form-group">
+          <div class="control-label"><%= I18n.t("prdcl_link.prdcl_title") %></div>
+          <div class="controls token-list">
+            <%= render_token :object => prdcl_link['_resolved'],
+                             :label => prdcl_link['_resolved']['title'],
+                             :type => "prdcl_title",
+                             :uri => prdcl_link["ref"],
+                             :placement => "top" %>
+          </div>
+        </div>
+      <% end %>
+      <% if index < prdcl_links.length-1 %><hr/><% end %>
+    <% end %>
+  </div>
+
+</section>

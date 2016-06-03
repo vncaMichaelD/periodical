@@ -1,0 +1,17 @@
+<% if controller.controller_name == 'digital_objects' %>
+  <%= javascript_include_tag "#{@base_url}/assets/javascripts/file_versions.crud.js" %>
+  <%= javascript_include_tag "#{@base_url}/assets/javascripts/generate_file_uri.js" %>
+  <script src="<%= "#{AppConfig[:frontend_prefix]}assets/subrecord.crud.js" %>"></script>
+  <script src="<%= "#{AppConfig[:frontend_prefix]}assets/form.js" %>"></script>
+  <script src="<%= "#{AppConfig[:frontend_prefix]}assets/search.js" %>"></script>
+  <script src="<%= "#{AppConfig[:frontend_prefix]}assets/embedded_search.js" %>"></script>
+  <%= javascript_include_tag "#{@base_url}/assets/javascripts/prdcl_titles.crud.js" %>
+<% end %>
+<% if controller.controller_name == 'prdcl_titles' %>
+  <script src="<%= "#{AppConfig[:frontend_prefix]}assets/subrecord.crud.js" %>"></script>
+  <script src="<%= "#{AppConfig[:frontend_prefix]}assets/form.js" %>"></script>
+  <script src="<%= "#{AppConfig[:frontend_prefix]}assets/search.js" %>"></script>
+  <script src="<%= "#{AppConfig[:frontend_prefix]}assets/embedded_search.js" %>"></script>
+  <%= javascript_include_tag "#{@base_url}/assets/javascripts/prdcl_titles.index.js" %>
+  <%= javascript_include_tag "#{@base_url}/assets/javascripts/prdcl_titles.crud.js" %>
+<% end %>

@@ -1,0 +1,14 @@
+en:
+  enumerations:
+    prdcl_pub_frequency:
+      daily: Daily
+      weekly: Weekly
+      biweekly: Bi-Weekly
+      monthly: Monthly
+      bimonthly: Bi-Monthly
+      varied: Varied
+
+    prdcl_pub_format:
+      hardcopy: Hard Copy
+      microfilm: Microfilm
+      microfiche: Microfiche

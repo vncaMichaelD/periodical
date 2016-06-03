@@ -1,0 +1,23 @@
+<%= setup_context :object => @prdcl_title, :title => @prdcl_title.title %>
+
+<div class="row">
+   <div class="col-md-3">
+     <%= render_aspace_partial :partial => "prdcl_titles/sidebar" %>
+   </div>
+  <div class="col-md-9">
+    <%= render_aspace_partial :partial => "toolbar" %>
+    <div class="record-pane">
+      <h2><%= @prdcl_title.title %>  <span class="label label-info"><%= I18n.t("prdcl_title._singular") %></span></h2>
+
+      <%= render_aspace_partial :partial => "shared/flash_messages" %>
+
+      <%= read_only_view(@prdcl_title.to_hash) %>
+
+      <%= render_aspace_partial :partial => "search/embedded", :locals => {:record => @prdcl_title, :filter_term => {"prdcl_title_uris" => @prdcl_title.uri}.to_json, :heading_text => I18n.t("prdcl_title._frontend.section.search_embedded")} %>
+
+      <%= readonly_context :prdcl_title, @prdcl_title do |readonly| %>
+        <%= show_plugins_for(@prdcl_title, readonly) %>
+      <% end %>
+    </div>
+  </div>
+</div>

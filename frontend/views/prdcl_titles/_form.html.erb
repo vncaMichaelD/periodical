@@ -1,0 +1,14 @@
+<% define_template("prdcl_title", jsonmodel_definition(:prdcl_title)) do |form| %>
+  <fieldset>
+    <section id="basic_information">
+      <%= form.label_and_textfield "publication" %>
+	  <%= form.label_and_textfield "publisher" %>
+    </section>
+  </fieldset>
+<% end %>
+
+<%= render_aspace_partial :partial => "shared/form_messages", :locals => {:object => @prdcl_title, :form => form} %>
+<% form.emit_template("prdcl_title") %>
+
+<%= form_plugins_for("prdcl_title", form) %>
+

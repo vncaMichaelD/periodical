@@ -1,0 +1,38 @@
+<%= setup_context(:title => I18n.t("prdcl_title._plural")) %>
+<%
+   @show_multiselect_column = user_can?("administer_system")
+  no_title!
+
+   add_column(I18n.t("prdcl_title._singular"), proc {|record| record['title']}, :sortable => true, :sort_by => 'title_sort')
+%>
+<div class="row">
+  <div class="col-md-3">
+    <div class="sidebar">
+      <%= render_aspace_partial :partial => "search/filter" %>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <% if user_can?('update_prdcl_title_record') %>
+      <div class="record-toolbar">
+        <div class="btn-group pull-right">
+          <% if user_can?('manage_repository') %>
+              <%= link_to I18n.t("actions.edit_default_values"), {:controller => :prdcl_titles, :action => :defaults}, :class => "btn btn-sm btn-default" %>
+          <% end %>
+          <%= link_to I18n.t("prdcl_title._frontend.action.create"), {:controller => :prdcl_titles, :action => :new}, :class => "btn btn-sm btn-default" %>
+
+        </div>
+        <br style="clear:both" /> <!-- So dirty! -->
+      </div>
+    <% end %>
+
+    <div class="record-pane">
+      <%= link_to_help :topic => "search" %>
+
+      <h2><%= I18n.t("prdcl_title._plural") %></h2>
+
+      <%= render_aspace_partial :partial => "shared/flash_messages" %>
+
+      <%= render_aspace_partial :partial => "search/listing" %>
+    </div>
+  </div>
+</div>

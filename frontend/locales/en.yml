@@ -1,0 +1,70 @@
+en:
+  prdcl:
+    publication: Publication
+    volume_num: Volume
+    issue_num: Issue
+    num_of_articles: Number of Articles
+    num_of_issues: Number of Issues
+    donor: Donor
+    publisher: Publisher
+    pub_city: Publication City
+    pub_country: Publication Country
+    pub_frequency: Frequency
+    pub_format: Format
+    potential: Potential Reunion?
+    association: Association
+    contact_name: Contact Name
+    address: Address
+    phone: Phone
+    email: Email
+    place: Place
+    city: City
+    state: State
+    country: Country
+    zip: Zip
+    general_note: Notes
+    start: Start
+    end: End
+    _singular: Periodical
+    _plural: Periodicals
+    _frontend:
+      action:
+        add: Add Periodical
+
+  prdcl_link: &prdcl_link_attributes
+    _plural: Publications
+    _singular: Publication
+    _frontend:
+      action:
+        add: Add Publication
+
+  prdcl_title: &prdcl_title_attributes
+    title: Publication (Publisher)
+    publication: Publication
+    publisher: Publisher
+    holdings: Holdings
+    _plural: Publications
+    _singular: Publication
+    _frontend:
+      messages:
+        created: Publication Created
+        updated: Publication Updated
+        deleted: Publication Deleted
+      section:
+        basic_information: Basic Information
+      action:
+        add: Add Publication
+        create: Create Publication
+        save: Save Publication
+        delete_multiple: Delete Publications
+
+  prdcl_title_batch:
+    <<: *prdcl_title_attributes
+    label: Label
+    prefix: Prefix
+    suffix: Suffix
+    title: Publication
+    start: Range Start
+    end: Range End
+    _singular: Batch Publications
+    _plural: Batch Publications

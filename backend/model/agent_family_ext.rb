@@ -1,0 +1,5 @@
+AgentFamily.include(MailingLists)
+AgentFamily.include(Militarys)
+AgentFamily.include(Civilians)
+AgentFamily.include(FriendsMemberships)
+AgentFamily.include(Staffs)

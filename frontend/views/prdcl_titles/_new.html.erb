@@ -1,0 +1,6 @@
+<%= form_for @prdcl_title, :as => "prdcl_title", :url => {:action => :create}, :html => {:class => 'form-horizontal aspace-record-form'} do |f| %>
+  <%= form_context :prdcl_title, @prdcl_title do |form| %>
+    <%= hidden_field "inline", "true" %>
+    <%= render_aspace_partial :partial => "prdcl_titles/form", :locals => {:form => form} %>
+  <% end %>
+<% end %>

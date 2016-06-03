@@ -1,0 +1,29 @@
+<%
+   section_id = "prdcls" if section_id.blank?
+%>
+
+<section id="<%= section_id %>">
+  <h3><%= I18n.t("prdcl._plural") %></h3>
+  <div class="accordion details" id="<%= section_id %>_accordion">
+    <% prdcls.each_with_index do | prdcl, index | %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row accordion-toggle collapsed" data-toggle="collapse" data-parent="#<%= section_id %>_accordion" href="#<%= section_id %>_prdcl_<%= index %>">
+            <div class="col-md-1">
+              <span class="glyphicon"></span>
+            </div>
+            <div class="col-md-7">
+			  <%= prdcl['publication'] %>
+            </div>
+          </div>
+        </div>
+        <div id="<%= section_id %>_prdcl_<%= index %>" class="accordion-body collapse">
+		  <% if prdcl["prdcl_links"].length > 0 %>
+		    <%= render_aspace_partial :partial => "prdcl_links/show", :locals => { :prdcl_links => prdcl["prdcl_links"] } %>
+		  <% end %>
+          <%= read_only_view(prdcl) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>

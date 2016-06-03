@@ -1,0 +1,5 @@
+AgentCorporateEntity.include(MailingLists)
+AgentCorporateEntity.include(Militarys)
+AgentCorporateEntity.include(Civilians)
+AgentCorporateEntity.include(FriendsMemberships)
+AgentCorporateEntity.include(Staffs)
